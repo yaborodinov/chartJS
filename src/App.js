@@ -1,9 +1,20 @@
+import { BarChart } from './components/BarChart';
 import './App.css';
+import { useState } from 'react';
+import { UserData } from './Data'
 
 function App() {
-  return (
+
+  const [userData, setUserData] = useState({
+    labels: UserData.map(data => data.year),
+    datasets: [{
+      label: 'Users gained',
+      data: UserData.map(data => data.userGain)
+    }]
+  })
+  return ( 
     <div className="App">
-      hi
+      <BarChart chartData={userData}/>
     </div>
   );
 }
