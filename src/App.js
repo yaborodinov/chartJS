@@ -7,6 +7,8 @@ import { UserData } from './Data'
 
 function App() {
 
+  const d = 4;
+
   const [userData, setUserData] = useState({
     labels: UserData.map(data => data.year),
     datasets: [{
